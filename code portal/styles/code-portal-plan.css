@@ -1,0 +1,160 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap');
+
+:root {
+      --plum: #310e31;
+      --mauve: #a393a0;
+      --gray: #dcd6d9;
+      --teal: #19c7c4;
+      --ink: #1b1b1b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #f8f6f7;
+      font-family: Raleway, Arial, sans-serif;
+    }
+
+    .page {
+      width: min(1100px, 92%);
+      margin: 2rem auto;
+    }
+
+    header {
+      padding: 2rem;
+      color: white;
+      background: var(--plum);
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0.5rem 0;
+      color: white;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-family: Oswald, Arial, sans-serif;
+    }
+
+    header p {
+      margin: 0;
+    }
+
+    section {
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 14px;
+      border: 2px solid var(--gray);
+    }
+
+    h2 {
+      margin-top: 0;
+      padding-bottom: 0.4rem;
+      color: var(--plum);
+      border-bottom: 4px solid var(--teal);
+      font-family: Oswald, Arial, sans-serif;
+    }
+
+    .design-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      display: block;
+      width: min(300px, 90%);
+      margin: auto;
+    }
+
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+    }
+
+    .swatch {
+      min-height: 90px;
+      padding: 0.7rem;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .plum {
+      color: white;
+      background: var(--plum);
+    }
+
+    .mauve {
+      background: var(--mauve);
+    }
+
+    .gray {
+      background: var(--gray);
+    }
+
+    .white {
+      background: white;
+      border: 1px solid var(--mauve);
+    }
+
+    .teal {
+      background: var(--teal);
+    }
+
+    .ink {
+      color: white;
+      background: var(--ink);
+    }
+
+    .type-sample {
+      padding: 1rem;
+      background: #f8f6f7;
+      border-left: 5px solid var(--teal);
+    }
+
+    .heading-font {
+      color: var(--plum);
+      font: 2rem Oswald, Arial, sans-serif;
+    }
+
+    .body-font {
+      font: 1rem Raleway, Arial, sans-serif;
+    }
+
+    .wireframe {
+      width: 100%;
+      border: 1px solid var(--mauve);
+      border-radius: 8px;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 1rem;
+      color: white;
+      background: var(--plum);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .design-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .swatches {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
