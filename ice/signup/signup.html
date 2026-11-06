@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Feed Sign Up</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+            background: rgb(120, 96, 64);
+            color: #111;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        #formContainer {
+            width: 520px;
+            overflow: hidden;
+            border: 10px solid #064a9e;
+            border-radius: 30px;
+            background: white;
+        }
+
+        .hero {
+            position: relative;
+            height: 230px;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            text-align: center;
+            color: white;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("images/jesus_feeds_5000.jpeg");
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.8);
+        }
+
+        .hero h1,
+        .hero h2 {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            text-shadow: 3px 3px 3px #222;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+        }
+
+        #closeBtn {
+            position: absolute;
+            z-index: 2;
+            top: 7px;
+            left: 7px;
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            border: 1px solid #aaa;
+            background: #eee;
+            cursor: pointer;
+        }
+
+        form {
+            padding: 25px 40px;
+        }
+
+        form h3 {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+        }
+
+        .field {
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            align-items: center;
+            min-height: 45px;
+            font-size: 1rem;
+        }   
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 210px;
+            height: 25px;
+            border: 1px solid #999;
+        }
+
+        .gender {
+            display: grid;
+            grid-template-columns: 1fr auto auto auto;
+            align-items: center;
+            min-height: 29px;
+            font-size: 0.76rem;
+        }
+
+        .gender input,
+        .check-row input {
+            margin: 0 2px 0 0;
+        }
+
+        .check-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 45px;
+            font-size: 1rem;
+        }
+
+        .submit-row {
+            display: flex;
+            justify-content: center;
+            margin-top: 0.45rem;
+        }
+
+        .submit-row button {
+            padding: 2px 6px;
+            border: 1px solid #888;
+            background: #eee;
+            cursor: pointer;
+        }
+
+        .books {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            height: 125px;
+            overflow: hidden;
+            background: #151515;
+        }
+
+        .book {
+            border-right: 3px solid white;
+            background-position: center;
+            background-size: cover;
+            filter: brightness(.65) saturate(.8);
+        }
+
+        .book.old {
+            background-image: url("images/old_testament.webp");
+        }
+
+        .book.new {
+            background-image: url("images/new_testament.webp");
+        }
+
+        .book.mormon {
+            background-image: url("images/book_of_mormon.webp");
+        }
+
+        .book.doctrine {
+            background-image: url("images/doctrine_and_covenants.webp");
+        }
+
+        .book.pearl {
+            background-image: url("images/pearl_of_great_price.webp");
+        }
+
+        #output {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background: white;
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+        }
+
+        #output:empty {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="formContainer">
+         <header class="hero">
+            <button type="button" id="closeBtn">X</button>
+
+            <div>
+                <h1>Daily Feed</h1>
+                <h2>Scripture a Day</h2>
+            </div>
+        </header>
+        <form id="myForm">
+            <h3>Sign Up for Daily Scripture Feed</h3>
+
+            <div class="field">
+                <label for="username">User Name:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="field">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="gender">
+                <span>Gender:</span>
+
+                <input type="radio" id="male" name="gender"
+                    value="male" required>
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender"
+                    value="female">
+                <label for="female">Female</label>
+            </div>
+
+            <div class="check-row">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Subscribe to newsletter</label>
+            </div>
+
+            <div class="check-row">
+                <input type="checkbox" id="conditions"
+                    name="conditions" required>
+                <label for="conditions">
+                    I acknowledge the terms and conditions
+                </label>
+            </div>
+
+            <div class="submit-row">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <div class="books">
+            <div class="book old"></div>
+            <div class="book new"></div>
+            <div class="book mormon"></div>
+            <div class="book doctrine"></div>
+            <div class="book pearl"></div>
+        </div>
+
+    </div>
+
+    <div id="output"></div>
+    <script>
+        // Here is some Javascript to start looking forward to wdd131
+        document.getElementById("closeBtn").addEventListener("click", function () {
+            document.getElementById("formContainer").style.display = "none";
+         });
+        const form = document.getElementById('myForm');
+        const output = document.getElementById('output');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Stop form from actually submitting
+
+            const formData = new FormData(form);
+            const entries = [];
+
+            for (const [key, value] of formData.entries()) {
+                if (key == "password") {
+                    entries.push(`<strong>${key}</strong>: ${value} (you should probably encrypt the password)`);
+                } else {
+                    entries.push(`<strong>${key}</strong>: ${value}`);
+                }
+            }
+
+            output.innerHTML = `
+            <br>  
+            <h3>Here is the data that would be sent to the server:</h3>
+            <ul>
+                ${entries.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            `;
+                });
+    </script>
+
+</body>
+
+</html>
