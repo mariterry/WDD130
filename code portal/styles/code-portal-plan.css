@@ -17,15 +17,17 @@
       color: var(--ink);
       background: #f8f6f7;
       font-family: Raleway, Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
     }
 
     .page {
-      width: min(1250px, 95%);
-      margin: 3rem auto;
+      width: min(1450px, 96%);
+      margin: 2rem auto;
     }
 
     header {
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
       color: white;
       background: var(--plum);
       border-radius: 14px;
@@ -35,18 +37,39 @@
     header h1 {
       margin: 0.5rem 0;
       color: white;
-      font-size: clamp(3rem, 7vw, 5rem);
+      font-size: clamp(4rem, 8vw, 6rem);
       font-family: Oswald, Arial, sans-serif;
     }
 
     header p {
       margin: 0;
-      font-size: 1.25rem;
+      font-size: 1.4rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      padding: 1rem 2rem;
+      color: white;
+      text-decoration: none;
+      border: 2px solid var(--teal);
+      border-radius: 6px;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: var(--plum);
+      background: var(--teal);
     }
 
     section {
       margin: 1.5rem 0;
-      padding: 1.5rem;
+      padding: 2rem;
       background: white;
       border-radius: 14px;
       border: 2px solid var(--gray);
@@ -58,6 +81,7 @@
       color: var(--plum);
       border-bottom: 4px solid var(--teal);
       font-family: Oswald, Arial, sans-serif;
+      font-size: 2rem;
     }
 
     .design-grid {
@@ -158,27 +182,6 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
-    nav {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-}
-
-nav a {
-  padding: 0.9rem 1.5rem;
-  color: white;
-  text-decoration: none;
-  border: 2px solid var(--teal);
-  border-radius: 6px;
-  font-size: 1.1rem;
-}
-
-nav a:hover {
-  color: var(--plum);
-  background: var(--teal);
-}
 
 main {
   margin: 2rem 0;
@@ -191,32 +194,40 @@ main {
 }
 
 .ice-card {
-  padding: 1.5rem;
+  padding: 2rem;
   background: white;
   border: 2px solid var(--gray);
   border-radius: 14px;
+  min-height: 300px;
 }
 
 .ice-card h2 {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
 }
 
 .ice-card a {
   display: inline-block;
   margin-top: 1rem;
-  padding: 0.7rem 1rem;
+  padding: 1rem 1.5rem;
   color: white;
   background: var(--plum);
   border-radius: 6px;
   text-decoration: none;
+  font-size: 1.05rem;
 }
 
 .ice-card a:hover {
   background: var(--teal);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   .ice-grid {
     grid-template-columns: 1fr;
   }
+
+  .ice-card {
+    min-height: auto;
+  }
 }
+
+
